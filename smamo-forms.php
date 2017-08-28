@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-/* 
+/*
 Plugin name: Piklist form workflow by SmartMonkey
 Description: adds raw form data editor to WordPress
 Version: 1.0.0
@@ -26,16 +26,19 @@ add_action('init', function (){
 smamo_partial('api');
 
 
+/* excel */
+smamo_partial(array('bulk-action','excel-export','admin-script'),'excel');
+
 /* ajax */
-smamo_partial(array('post', 'form-entry', 'mailchimp', 'ubivox', 'redirect', 'email', 'message', 'brackets'),'ajax');
+smamo_partial(array('excel-export','post', 'form-entry', 'mailchimp', 'ubivox', 'redirect', 'email', 'message', 'brackets'),'ajax');
 
 /* Add post types */
 smamo_partial(array( 'wacc', 'form', 'entry' ),'post-types');
 
 
-/* 
- * smamo_partial( [string|array] $f, [string] $i ) 
- * 
+/*
+ * smamo_partial( [string|array] $f, [string] $i )
+ *
  * $f : (required) string or array of file names
  * $i : (optional) path to files
  * Points to lib by deafult (sry bruh)

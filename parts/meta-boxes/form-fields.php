@@ -31,6 +31,7 @@ piklist('field', array(
                 'textarea' => 'Tekstboks',
                 'checkbox' => 'Checkboxe',
                 'select' => 'Listevalg',
+                'info' => 'hjælpetekst',
                 
             ),
             'value' => 'null',
@@ -71,7 +72,7 @@ piklist('field', array(
             'conditions' => array(
                 array(
                     'field' => 'form_fields:field_type',
-                    'value' => array('null','hidden'),
+                    'value' => array('null','hidden','info'),
                     'compare' => '!=',
                 )
             ),
@@ -103,7 +104,7 @@ piklist('field', array(
             'conditions' => array(
                 array(
                     'field' => 'form_fields:field_type',
-                    'value' => array('null','hidden'),
+                    'value' => array('null','hidden','info'),
                     'compare' => '!=',
                 )
             ),
@@ -112,6 +113,24 @@ piklist('field', array(
         array(
             'type' => 'html',
             'value' => '',
+        ),
+        
+        
+        array(
+            'type' => 'editor',
+            'columns' => 10,
+            'field' => 'field_info_text',
+            'attributes' => array(
+                'rows' => 4,
+                'columns' => 10
+            ),
+            
+            'conditions' => array(
+                array(
+                    'field' => 'form_fields:field_type',
+                    'value' => 'info',
+                ),
+            ),
         ),
 
         array(

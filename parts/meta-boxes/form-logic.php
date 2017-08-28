@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 /*
@@ -20,7 +20,7 @@ if ($fields && is_array($fields) && !empty($fields[0])) :
 $field_select = array(0 => 'felt');
 foreach($fields as $field){
     if (!isset($field['field_label']) || !isset($field['field_name'])) continue;
-    
+
     $field_select[$field['field_name']] = $field['field_label'];
 }
 
@@ -46,9 +46,9 @@ piklist('field',array(
             'value' => 'checked',
         ),
     ),
-    
+
     'fields' => array(
-        
+
         array(
             'type' => 'select',
             'field' => 'action',
@@ -58,28 +58,28 @@ piklist('field',array(
                 'hide' => 'Skjul',
             ),
         ),
-        
+
         array(
             'type' => 'select',
             'field' => 'target',
             'columns' => 3,
             'choices' => $field_select,
         ),
-        
+
         array(
             'type' => 'text',
             'field' => 'if',
             'attributes' => array('disabled' => 'disabled', 'placeholder' => 'Hvis'),
             'columns' => 1,
         ),
-        
+
         array(
             'type' => 'select',
             'field' => 'actor',
             'columns' => 3,
             'choices' => $field_select,
         ),
-        
+
         array(
             'type' => 'select',
             'field' => 'compare',
@@ -91,7 +91,7 @@ piklist('field',array(
                 '>' => '>',
             ),
         ),
-        
+
         array(
             'columns' => 3,
             'type' => 'text',
@@ -102,10 +102,13 @@ piklist('field',array(
 
 
 // Or  no
-else : 
+else :
 piklist('field',array(
     'type' => 'html',
     'value' => '<p>Start med at oprette felter i formularen.</p>',
 ));
 endif; // have fields?
 endif; // have id?
+
+unset($fields);
+unset($field_select);
