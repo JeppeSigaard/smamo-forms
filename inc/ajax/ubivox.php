@@ -12,6 +12,10 @@ function smamo_form_ubivox($form_id, $entry_id, $action){
     
     $merge_fields = array();
     foreach($action['uvx_merge_tags'] as $merge_tag){
+        
+        if(!isset($merge_tag['uvx_tag']) || $merge_tag['uvx_tag'] == '') continue;
+        if(!isset($merge_tag['entry_field']) || $merge_tag['entry_field'] == '') continue;
+        
         $merge_fields[$merge_tag['uvx_tag']] = get_post_meta($entry_id, $merge_tag['entry_field'], true);
     }
     
