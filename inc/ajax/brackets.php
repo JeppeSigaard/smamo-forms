@@ -2,7 +2,7 @@
 
 function smamo_replace_brackets($str, $form_id, $entry_id){
 
-    $fields = get_post_meta($form_id, 'form_fields', true);
+    $fields = get_post_meta($form_id, 'smamo_form_fields', true);
 
     $replace = array();
 

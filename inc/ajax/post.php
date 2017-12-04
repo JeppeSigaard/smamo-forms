@@ -14,7 +14,7 @@ function smamo_form_submit(){
 
     $entry_id = smamo_create_form_entry($form_id, $_POST);
 
-    $actions = get_post_meta($form_id, 'form_actions', true);
+    $actions = get_post_meta($form_id, 'smamo_form_actions', true);
 
     foreach($actions as $action){
         if ('return_success' == $action['action_type']){

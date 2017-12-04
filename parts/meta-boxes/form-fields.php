@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 /*
@@ -15,12 +15,12 @@ piklist('field', array(
     'type' => 'group',
     'columns' => 12,
     'label' => 'felt',
-    'field' => 'form_fields',
+    'field' => 'smamo_form_fields',
     'template' => 'field',
     'add_more' => true,
     'fields' => array(
         array(
-            'type' => 'select', 
+            'type' => 'select',
             'choices' => array(
                 'null' => '(Vælg felttype)',
                 'text' => 'Tekstfelt',
@@ -32,7 +32,7 @@ piklist('field', array(
                 'checkbox' => 'Checkboxe',
                 'select' => 'Listevalg',
                 'info' => 'hjælpetekst',
-                
+
             ),
             'value' => 'null',
             'label' => 'Felttype',
@@ -43,7 +43,7 @@ piklist('field', array(
         ),
 
         array(
-            'type' => 'text', 
+            'type' => 'text',
             'label' => 'Feltnavn',
             'field' => 'field_name',
             'help' => 'Feltets navn bruges adminstrativt til opsætning af autosvar, visning af indtastninger med mere. Feltet skal udfyldes og må ikke indeholde specialtegn, æ, ø, å eller mellemrum.',
@@ -51,12 +51,12 @@ piklist('field', array(
             'required' => true,
             'conditions' => array(
                 array(
-                    'field' => 'form_fields:field_type',
+                    'field' => 'smamo_form_fields:field_type',
                     'value' => array('null'),
                     'compare' => '!=',
                 )
             ),
-            
+
             'sanitize' => array(
                 array(
                     'type' => 'html_class'
@@ -65,35 +65,35 @@ piklist('field', array(
         ),
 
         array(
-            'type' => 'text', 
+            'type' => 'text',
             'label' => 'Label',
             'field' => 'field_label',
             'columns' => 3,
             'conditions' => array(
                 array(
-                    'field' => 'form_fields:field_type',
+                    'field' => 'smamo_form_fields:field_type',
                     'value' => array('null','hidden','info'),
                     'compare' => '!=',
                 )
             ),
         ),
-        
+
         array(
-            'type' => 'text', 
+            'type' => 'text',
             'label' => 'Værdi',
             'field' => 'field_value',
             'help' => 'Skjulte felter vil typisk være udfyldt på forhånd.',
             'columns' => 3,
             'conditions' => array(
                 array(
-                    'field' => 'form_fields:field_type',
+                    'field' => 'smamo_form_fields:field_type',
                     'value' => 'hidden',
                 )
             ),
         ),
 
         array(
-            'type' => 'select', 
+            'type' => 'select',
             'label' => 'Skal udfyldes',
             'field' => 'field_required',
             'columns' => 2,
@@ -103,19 +103,19 @@ piklist('field', array(
             ),
             'conditions' => array(
                 array(
-                    'field' => 'form_fields:field_type',
+                    'field' => 'smamo_form_fields:field_type',
                     'value' => array('null','hidden','info'),
                     'compare' => '!=',
                 )
             ),
         ),
-        
+
         array(
             'type' => 'html',
             'value' => '',
         ),
-        
-        
+
+
         array(
             'type' => 'editor',
             'columns' => 10,
@@ -124,10 +124,10 @@ piklist('field', array(
                 'rows' => 4,
                 'columns' => 10
             ),
-            
+
             'conditions' => array(
                 array(
-                    'field' => 'form_fields:field_type',
+                    'field' => 'smamo_form_fields:field_type',
                     'value' => 'info',
                 ),
             ),
@@ -140,7 +140,7 @@ piklist('field', array(
             'columns' => 12,
             'conditions' => array(
                 array(
-                    'field' => 'form_fields:field_type',
+                    'field' => 'smamo_form_fields:field_type',
                     'value' => array('select','checkbox'),
                 )
             ),

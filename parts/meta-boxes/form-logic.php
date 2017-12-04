@@ -11,7 +11,7 @@ Flow: formFlow
 Tab: Felter
 */
 
-$post_id = esc_attr($_GET['post']);
+$post_id = (isset($_GET['post'])) ? esc_attr($_GET['post']) : false;
 if($post_id) :
 
 $fields = get_post_meta($post_id,'form_fields', true);
@@ -26,7 +26,7 @@ foreach($fields as $field){
 
 piklist('field',array(
     'type' => 'checkbox',
-    'field' => 'logic_active',
+    'field' => 'smamo_form_logic_active',
     'label' => 'Aktiver betinget logik',
     'columns' => 12,
     'choices' => array(
@@ -36,13 +36,13 @@ piklist('field',array(
 
 piklist('field',array(
     'type' => 'group',
-    'field' => 'logic',
+    'field' => 'smamo_form_logic',
     'add_more' => true,
     'template' => 'field',
     'columns' => 12,
     'conditions' => array(
         array(
-            'field' => 'logic_active',
+            'field' => 'smamo_form_logic_active',
             'value' => 'checked',
         ),
     ),

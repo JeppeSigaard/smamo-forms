@@ -28,7 +28,7 @@ $form_id = (isset($_GET['post'])) ? esc_attr($_GET['post']) : false ;
 $field_array = array('null' => '(Vælg felt)');
 $field_placeholders = '';
 if($form_id){
-    $form_fields = get_post_meta($form_id, 'form_fields', true);
+    $form_fields = get_post_meta($form_id, 'smamo_form_fields', true);
 
     foreach($form_fields as $field){
         if (!isset($field['field_type'])
@@ -45,7 +45,7 @@ if($form_id){
 
 piklist('field', array(
     'type' => 'group',
-    'field' => 'form_actions',
+    'field' => 'smamo_form_actions',
     'template' => 'field',
     'add_more' => 'true',
     'columns' => 12,
@@ -93,7 +93,7 @@ piklist('field', array(
 
                     'conditions' => array(
                         array(
-                            'field' => 'form_actions:from_name:field',
+                            'field' => 'smamo_form_actions:from_name:field',
                             'value' => 'custom',
                         ),
                     ),
@@ -102,7 +102,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'send_email',
                 ),
             ),
@@ -129,7 +129,7 @@ piklist('field', array(
 
                     'conditions' => array(
                         array(
-                            'field' => 'form_actions:from_email:field',
+                            'field' => 'smamo_form_actions:from_email:field',
                             'value' => 'custom',
                         ),
                     ),
@@ -138,7 +138,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'send_email',
                 ),
             ),
@@ -165,7 +165,7 @@ piklist('field', array(
 
                     'conditions' => array(
                         array(
-                            'field' => 'form_actions:to_email:field',
+                            'field' => 'smamo_form_actions:to_email:field',
                             'value' => 'custom',
                         ),
                     ),
@@ -174,7 +174,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'send_email',
                 ),
             ),
@@ -188,7 +188,7 @@ piklist('field', array(
             'label' => 'Bruger',
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'ubivox_subscribe',
                 ),
             ),
@@ -201,7 +201,7 @@ piklist('field', array(
             'label' => 'Adgangskode',
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'ubivox_subscribe',
                 ),
             ),
@@ -214,7 +214,7 @@ piklist('field', array(
             'label' => 'Liste',
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'ubivox_subscribe',
                 ),
             ),
@@ -228,7 +228,7 @@ piklist('field', array(
             'choices' => $field_array,
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'ubivox_subscribe',
                 ),
             ),
@@ -261,7 +261,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'ubivox_subscribe',
                 ),
             ),
@@ -280,7 +280,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'mailchimp_subscribe',
                 ),
             ),
@@ -294,7 +294,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'mailchimp_subscribe',
                 ),
             ),
@@ -327,7 +327,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'mailchimp_subscribe',
                 ),
             ),
@@ -345,7 +345,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'redirect',
                 ),
             ),
@@ -358,12 +358,12 @@ piklist('field', array(
             'columns' => 4,
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => 'redirect',
                 ),
 
                 array(
-                    'field' => 'form_actions:redirect_page',
+                    'field' => 'smamo_form_actions:redirect_page',
                     'value' => 'custom',
                 ),
             ),
@@ -379,7 +379,7 @@ piklist('field', array(
 
             'conditions' => array(
                 array(
-                    'field' => 'form_actions:action_type',
+                    'field' => 'smamo_form_actions:action_type',
                     'value' => array('return_success','send_email'),
                 ),
             ),

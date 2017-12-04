@@ -11,10 +11,10 @@ priority: default
 $post_id = esc_attr($_GET['post']);
 if($post_id) :
 
-$form_id = get_post_meta($post_id,'form_id', true);
+$form_id = get_post_meta($post_id,'smamo_form_id', true);
 if($form_id) :
 
-$fields = get_post_meta($form_id,'form_fields', true);
+$fields = get_post_meta($form_id,'smamo_form_fields', true);
 if ($fields && is_array($fields) && !empty($fields[0])) :
 
 foreach($fields as $field){
